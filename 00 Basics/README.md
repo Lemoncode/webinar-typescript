@@ -1,6 +1,4 @@
-# webinar-typescript
-
-Demo material for TypeScript webinar: "Es hora de TypeScript..." (spanish).
+# 00 Basics
 
 # About Lemoncode
 
