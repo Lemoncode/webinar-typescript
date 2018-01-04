@@ -1,0 +1,37 @@
+{
+  "name": "webinar-typescript",
+  "version": "1.0.0",
+  "description": "02 Webpack sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "rimraf dist && webpack",
+    "build:prod": "rimraf dist && webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemoncode/webinar-typescript.git"
+  },
+  "keywords": [
+    "webinar",
+    "typescript",
+    "lemoncode",
+    "webpack"
+  ],
+  "author": "Lemoncode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lemoncode/webinar-typescript/issues"
+  },
+  "homepage": "https://github.com/Lemoncode/webinar-typescript#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
