@@ -141,11 +141,35 @@ class ClientEntity {
 const myClientEntity = new ClientEntity();
 console.log(myClientEntity.lastname);
 ```
-Another interesting thin is that class can implement interfaces
+Another interesting thing is that class can implement interfaces
 
+```javascript
+interface ContactInfo {
+  email : string;
+  phone : string;
+}
 
+interface IMarketing {
+  gotContactInformation : boolean;
+  contactInfo : ContactInfo;  
+}
 
-We can as well type callbacks:
+class ClientEntity implements IMarketing {
+  name : string;
+  private lastname : string;
+  gotContactInformation : boolean;
+  contactInfo : ContactInfo;
+
+  public constructor() {
+    this.name = '';
+    this.lastname = '';
+    this.gotContactInformation = false;
+    this.contactInfo = null;
+  }  
+}
+```
+
+We can as well type callback parameters:
 
 ```javascript
 type MyClickEventHanlder = (info : string) => void;
