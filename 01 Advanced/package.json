@@ -1,0 +1,15 @@
+{
+  "name": "webinar-typescript",
+  "version": "1.0.0",
+  "description": "# About Lemoncode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.91",
+    "lodash": "^4.17.4"
+  }
+}
