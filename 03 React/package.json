@@ -1,0 +1,65 @@
+{
+  "name": "webinar-typescript",
+  "version": "1.0.0",
+  "description": "React sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "nf start",
+    "start:dev": "webpack-dev-server --config ./config/webpack/app/dev.js",
+    "start:prod": "cross-env REST_ENV=real NODE_ENV=production webpack-dev-server --config ./config/webpack/app/prod.js",
+    "build": "npm run build:dev",
+    "build:dev": "rimraf dist && webpack --config ./config/webpack/app/dev.js",
+    "build:prod": "rimraf dist && cross-env REST_ENV=real NODE_ENV=production webpack -p --config ./config/webpack/app/prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemoncode/webinar-typescript.git"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "Lemoncode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lemoncode/webinar-typescript/issues"
+  },
+  "homepage": "https://github.com/Lemoncode/webinar-typescript#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-hot-loader": "^3.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.24",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-hot-loader": "^3.0.5",
+    "@types/webpack-env": "^1.13.2",
+    "awesome-typescript-loader": "^3.3.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "foreman": "^2.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "if-env": "^1.0.0",
+    "node-sass": "^4.6.1",
+    "prop-types": "^15.6.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
+  }
+}
