@@ -1,0 +1,16 @@
+@import 'common';
+
+.input {
+  @include form-control();
+  line-height: 5rem;
+  padding: 2.5rem 2rem;
+  background-color: #f8f8f8;
+  border: .3rem solid #ddd;
+  transition: all ease .3s;
+
+  &:focus {
+    outline: 0;
+    background: #fff;
+    border-color: #ccc;
+  }
+}
