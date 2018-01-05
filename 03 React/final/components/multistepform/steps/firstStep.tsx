@@ -23,8 +23,8 @@ export const FirstStep: React.StatelessComponent<FormStep> = (props) => (
       label="Confirm password"
       onChange={props.onChangeField}
       value={props.formData.confirmPassword}
-      id="confirm-password"
-      name="confirm-password"
+      id="confirmPassword"
+      name="confirmPassword"
       type="password"
     />
   </fieldset>

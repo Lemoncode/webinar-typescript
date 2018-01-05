@@ -1,0 +1,40 @@
+.form {
+  width: 100%;
+  background-color: white;
+  color: #888;
+  border-radius: .5rem;
+  border: .3rem solid transparent;
+  padding-top: 1.5rem;
+}
+
+.form-top {
+  display: flex;
+  flex-direction: row;
+  padding: 0 2.5rem;
+
+  &-left {
+    width: 75%;
+  }
+
+  &-right {
+    width: 25%;
+    font-size: 6.6rem;
+    text-align: right;
+  }
+}
+
+.heading {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #555;
+}
+
+.step {
+  font-size: 2.2rem;
+}
+
+.form-bottom {
+  padding: 2.5rem 2.5rem 3.0rem 2.5rem;
+  background-color: #eee;
+}

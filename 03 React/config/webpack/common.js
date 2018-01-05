@@ -4,7 +4,7 @@ const helpers = require('../helpers');
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       'globalStyles': helpers.resolveFromRootPath("src/content/styles"),
     },

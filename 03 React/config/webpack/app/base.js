@@ -9,7 +9,7 @@ module.exports = merge(common, {
   context: helpers.resolveFromRootPath('src'),
   entry: {
     app: [
-      './index.tsx',
+      './index.jsx',
     ],
     vendor: [
       'babel-polyfill',
@@ -29,13 +29,34 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'awesome-typescript-loader',
-        options: {
-          useBabel: true,
-          useCache: true,
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
+          },
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              useCache: false,
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
