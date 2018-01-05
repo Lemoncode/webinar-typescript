@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   constructor(private lemoncoderService: LemoncoderService) {}
 
   ngOnInit(): void {
-  //  this.login = this.lemoncoderService.getCoder('').login;
     this.lemoncoderService.getCoder('JaimeSalas')
       .subscribe((login) => this.login = login);
   }
