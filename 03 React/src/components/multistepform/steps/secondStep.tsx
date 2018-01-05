@@ -6,22 +6,22 @@ export const SecondStep: React.StatelessComponent<FormStep> = (props) => (
   <fieldset>
     <Input
       label="First name"
-      onChange={console.log}
-      value={null}
-      id="first-name"
-      name="first-name"
+      onChange={props.onChangeField}
+      value={props.formData.firstName}
+      id="firstName"
+      name="firstName"
     />
     <Input
       label="Last name"
-      onChange={console.log}
-      value={null}
-      id="last-name"
-      name="last-name"
+      onChange={props.onChangeField}
+      value={props.formData.lastName}
+      id="lastName"
+      name="lastName"
     />
     <Input
       label="Phone"
-      onChange={console.log}
-      value={null}
+      onChange={props.onChangeField}
+      value={props.formData.phone}
       id="phone"
       name="phone"
       type="text"

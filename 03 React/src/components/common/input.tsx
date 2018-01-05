@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { Value } from '../../entities';
 const styles: any = require('./input.scss');
 
 interface Props {
   value: string | number;
-  onChange(field: string, value: string | number): void;
+  onChange(field: string, value: Value): void;
   label: string;
   id: string;
   name: string;
@@ -20,6 +21,7 @@ export const Input: React.StatelessComponent<Props> = (props) => (
       onChange={onChange(props)}
       placeholder={props.label}
       className={`form-control ${styles.input}`}
+      value={props.value}
     />
   </div>
 );

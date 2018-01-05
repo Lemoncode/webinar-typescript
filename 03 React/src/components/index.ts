@@ -1,1 +1,1 @@
-export { MultiStepForm } from './multistepform';
+export * from './multistepform';

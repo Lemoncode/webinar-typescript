@@ -9,8 +9,8 @@ export const ThirdStep: React.StatelessComponent<FormStep> = (props) => (
       <Checkbox
         id="agreement"
         name="agreement"
-        checked={false}
-        onChange={console.log}
+        checked={props.formData.agreement}
+        onChange={props.onChangeField}
       >
         Accept <a href="#">license agreement</a>
       </Checkbox>

@@ -5,6 +5,7 @@ const styles: any = require('./multistepform.scss');
 
 interface Props {
   heading: string;
+  onSubmit(): void;
 }
 
 interface State {
@@ -54,8 +55,9 @@ export class MultiStepForm extends React.PureComponent<Props, State>  {
     });
   }
 
-  onSubmit = () => {
-
+  onSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    this.props.onSubmit();
   }
 
   renderButtons(childrenLength: number) {

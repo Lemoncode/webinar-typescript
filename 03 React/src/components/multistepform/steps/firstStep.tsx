@@ -6,23 +6,23 @@ export const FirstStep: React.StatelessComponent<FormStep> = (props) => (
   <fieldset>
     <Input
       label="Username or email"
-      onChange={console.log}
-      value={null}
+      onChange={props.onChangeField}
+      value={props.formData.username}
       id="username"
       name="username"
     />
     <Input
       label="Password"
-      onChange={console.log}
-      value={null}
+      onChange={props.onChangeField}
+      value={props.formData.password}
       id="password"
       name="password"
       type="password"
     />
     <Input
       label="Confirm password"
-      onChange={console.log}
-      value={null}
+      onChange={props.onChangeField}
+      value={props.formData.confirmPassword}
       id="confirm-password"
       name="confirm-password"
       type="password"
