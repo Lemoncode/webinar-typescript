@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { MultiStepForm, FirstStep, SecondStep, ThirdStep } from './components';
 import styles from './app.scss';
 
-
-export class App extends React.PureComponent {
+export class App extends PureComponent {
   state = {
     formData: {
       agreement: false,
@@ -53,7 +52,6 @@ export class App extends React.PureComponent {
   }
 
   onSubmit = () => {
-    // tslint:disable-next-line:no-console
     console.log(JSON.stringify(this.state.formData));
   }
 }
