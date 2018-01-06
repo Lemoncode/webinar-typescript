@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Value } from '../../entities';
+import { Value, SignupData } from '../../entities';
 const styles: any = require('./input.scss');
 
 interface Props {
   value: string | number;
-  onChange(field: string, value: Value): void;
+  onChange(field: keyof SignupData, value: Value): void;
   label: string;
   id: string;
-  name: string;
+  name: keyof SignupData;
   type?: string;
 }
 
@@ -31,5 +31,5 @@ Input.defaultProps = {
 };
 
 const onChange = (props: Props) => ({ target: { value, name } }: React.ChangeEvent<HTMLInputElement>) => {
-  props.onChange(name, value);
+  props.onChange(name as keyof SignupData, value);
 };

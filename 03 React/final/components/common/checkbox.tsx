@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Value } from '../../entities';
+import { Value, SignupData } from '../../entities';
 const styles: any = require('./checkbox.scss');
 
 interface Props {
   id: string;
-  name: string;
+  name: keyof SignupData;
   checked: boolean;
-  onChange(field: string, value: Value): void;
+  onChange(field: keyof SignupData, value: Value): void;
 }
 
 export const Checkbox: React.StatelessComponent<Props> = (props) => (
@@ -26,5 +26,5 @@ export const Checkbox: React.StatelessComponent<Props> = (props) => (
 );
 
 const onChange = (props: Props) => ({ target: { name, checked } }: React.ChangeEvent<HTMLInputElement>) => {
-  props.onChange(name, checked);
+  props.onChange(name as keyof SignupData, checked);
 };
