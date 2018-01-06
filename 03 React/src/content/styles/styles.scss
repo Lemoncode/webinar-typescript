@@ -1,0 +1,14 @@
+html {
+  height: 100vh;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url('../../content/img/blue-background.jpg');
+  background-size: cover;
+}
+
+:global(#root) {
+  height: 100vh;
+}

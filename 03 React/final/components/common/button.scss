@@ -1,0 +1,23 @@
+@import 'common';
+
+$backgroundColor: #19b9e7;
+.button {
+  @include form-control();
+  line-height: 5rem;
+  padding: 0 1.8rem;
+  background-color: $backgroundColor;
+  border-radius: .4rem;
+  min-width: 10.5rem;
+
+  &, &:focus, &:hover {
+    color: white;
+  }
+
+  &:hover {
+    background-color: lighten($backgroundColor, 15%);
+  }
+
+  & + & {
+    margin-left: .5rem;
+  }
+}
