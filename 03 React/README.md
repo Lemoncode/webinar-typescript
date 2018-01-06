@@ -19,7 +19,7 @@ The first step is change our entry point in webpack to point to `index.tsx`:
 
 Next we'll rename our `index.jsx` to `index.tsx` and apply some TypeScript changes on imports:
 
-### ~~_src/index.jsx_~~ --> _src/index.tsx_
+### ~~_src/index.jsx_~~ → _src/index.tsx_
 
 ```diff
 - import React from 'react';
@@ -32,7 +32,7 @@ Next we'll rename our `index.jsx` to `index.tsx` and apply some TypeScript chang
 
 Next file is `app.jsx`. Let's change imports and type state and methods:
 
-### ~~_src/app.jsx_~~ --> _src/app.tsx_
+### ~~_src/app.jsx_~~ → _src/app.tsx_
 
 ```diff
 - import React, { PureComponent } from 'react';
@@ -70,7 +70,7 @@ Next file is `app.jsx`. Let's change imports and type state and methods:
 
 Now it's time to refactor `MultiStepForm`:
 
-### ~~_src/components/multistepform/multistepform.jsx_~~ --> _src/components/multistepform/multistepform.tsx_
+### ~~_src/components/multistepform/multistepform.jsx_~~ → _src/components/multistepform/multistepform.tsx_
 
 First we'll refactor imports section
 
@@ -163,7 +163,7 @@ Now we'll add some types on methods and variables:
 
 Now we'll refactor `Button`. Rename its extension to `.tsx` and make next changes:
 
-### ~~_src/components/common/button.jsx_~~ --> _src/components/common/button.tsx_
+### ~~_src/components/common/button.jsx_~~ → _src/components/common/button.tsx_
 
 ```diff
 - import React from 'react';
@@ -192,7 +192,7 @@ Now we'll refactor `Button`. Rename its extension to `.tsx` and make next change
 
 Let's refactor more `MultiStepForm` childs. We'll start with `FirstStep`. If you look at the component definition it's using a shared entity under `common.js` and this is using another shared entity inside `entities` so let's take that file as our entry point to refactor. Rename `entities.js` to `entities.ts` and make next change to export an interface instead of propType:
 
-### ~~_src/entities.jsx_~~ --> _src/entities.tsx_
+### ~~_src/entities.js_~~ → _src/entities.ts_
 
 ```diff
 - import PropTypes from 'prop-types';
@@ -243,7 +243,7 @@ Maybe you've noted down something. This is the same entity as the App's `formDat
 
 Let's now refactor `common.js` by changing its extension to `ts` and changing the exporter propType to another interface:
 
-### ~~_src/components/steps/multistepform/common.jsx_~~ --> _src/components/steps/multistepform/common.tsx_
+### ~~_src/components/steps/multistepform/common.js_~~ → _src/components/steps/multistepform/common.ts_
 
 ```diff
 - import PropTypes from 'prop-types';
@@ -282,7 +282,7 @@ This propType (now an interface) is used by every _step_ component. We can type 
 
 Now we have ready step component's propTypes let's type `FirstStep`:
 
-### ~~_src/components/multistepform/firstStep.jsx_~~ --> _src/components/multistepform/firstStep.tsx_
+### ~~_src/components/multistepform/firstStep.jsx_~~ → _src/components/multistepform/firstStep.tsx_
 
 ```diff
 - import React from 'react';
@@ -301,7 +301,7 @@ Now we have ready step component's propTypes let's type `FirstStep`:
 
 Since `FirstStep` is using `Input` let's refactor it too:
 
-### ~~_src/components/common/input.jsx_~~ --> _src/components/common/input.tsx_
+### ~~_src/components/common/input.jsx_~~ → _src/components/common/input.tsx_
 
 ```diff
 - import React from 'react';
@@ -348,7 +348,7 @@ Since `FirstStep` is using `Input` let's refactor it too:
 
 It's `SecondStep` component's turn to refactor:
 
-### ~~_src/components/multistepform/secondStep.jsx_~~ --> _src/components/multistepform/secondStep.tsx_
+### ~~_src/components/multistepform/secondStep.jsx_~~ → _src/components/multistepform/secondStep.tsx_
 
 ```diff
 - import React from 'react';
@@ -367,7 +367,7 @@ It's `SecondStep` component's turn to refactor:
 
 Next we'll refactor `ThirdStep` component:
 
-### ~~_src/components/multistepform/thirdStep.jsx_~~ --> _src/components/multistepform/thirdStep.tsx_
+### ~~_src/components/multistepform/thirdStep.jsx_~~ → _src/components/multistepform/thirdStep.tsx_
 
 ```diff
 - import React from 'react';
@@ -388,7 +388,7 @@ Next we'll refactor `ThirdStep` component:
 
 Since `ThirdStep` component is using `Checkbox` let's refactor it:
 
-### ~~_src/components/common/checkbox.jsx_~~ --> _src/components/common/checkbox.tsx_
+### ~~_src/components/common/checkbox.jsx_~~ → _src/components/common/checkbox.tsx_
 
 ```diff
 - import React from 'react';
@@ -423,10 +423,10 @@ Since `ThirdStep` component is using `Checkbox` let's refactor it:
 
 Now we have all components refactored to TypeScript. Our remaining task it's to refactor all `index.js` to `index.ts`:
 
-### ~~_src/components/common/index.jsx_~~ --> _src/components/common/index.tsx_
-### ~~_src/components/index.jsx_~~ --> _src/components/index.tsx_
-### ~~_src/components/multistepform/index.jsx_~~ --> _src/components/multistepform/index.tsx_
-### ~~_src/components/multistepform/steps/index.jsx_~~ --> _src/components/multistepform/steps/index.tsx_
+- ~~_src/components/common/index.js_~~ → _src/components/common/index.ts_
+- ~~_src/components/index.js_~~ → _src/components/index.ts_
+- ~~_src/components/multistepform/index.js_~~ → _src/components/multistepform/index.ts_
+- ~~_src/components/multistepform/steps/index.js_~~ → _src/components/multistepform/steps/index.ts_
 
 Finally let's make two refactors to improve typechecking.
 
@@ -498,7 +498,8 @@ Next use it in `app.tsx`, `checkbox.tsx`, `input.tsx` and `common.ts`:
 ### _src/components/multistepform/steps/common.tsx_
 
 ```diff
-- import { Value, SignupData } from '../../../entities';
+- import { SignupData } from '../../../entities';
++ import { Value, SignupData } from '../../../entities';
   import { SignupData } from '../../../entities';
 
   export interface FormStep {
@@ -509,7 +510,7 @@ Next use it in `app.tsx`, `checkbox.tsx`, `input.tsx` and `common.ts`:
   }
 ```
 
-Last but not less important, we can remove some babel plugins and presets like `babel-preset-react`, `babel-preset-stage-*`, `babel-plugin-transform-class-properties` even `babel-loader` because `tsc` (TypeScript) compiler will be take care of.
+Last but not less important, we can remove some babel plugins and presets like `babel-preset-react`, `babel-preset-stage-*` and `babel-plugin-transform-class-properties` (even `babel-loader` if you're using `awesome-typescript-loader`) if you use it because `tsc` (TypeScript) compiler will be take care of it.
 
 ## **(Optional)**
 
@@ -563,7 +564,7 @@ If you look carefully at `Input` and `Checkbox` onChange method, we're using the
 
 ```diff
   import * as React from 'react';
-- import { Value, SignupData } from '../../entities';
+- import { Value } from '../../entities';
 + import { Value, SignupData } from '../../entities';
   const styles: any = require('./checkbox.scss');
 
