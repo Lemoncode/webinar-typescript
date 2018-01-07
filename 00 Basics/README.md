@@ -189,8 +189,8 @@ enum Force {
 
 ```
 
-By default are numeric values starting in `0` and incrementing by `1`, to the end. We can use as 
-well string values. 
+By default are numeric values starting in `0` and incrementing by `1`, starting from left to right.
+We can use as well string values. 
 
 ```diff
 enum Force {
