@@ -177,7 +177,7 @@ type MyClickEventHanlder = (info : string) => void;
 const clickHandler: MyClickEventHanlder = (info) => {};
 ```
 
-One feature of typescript that will remind familiar for people that come from languages as
+One feature of typescript that will remind familiar to people that come from languages as
 C# or Java are enums. Enums allow us to define a set of named constants. Using enums in our 
 code can clarify our intentions.
 
