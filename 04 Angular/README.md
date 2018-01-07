@@ -17,7 +17,7 @@
 $ ng new typescript-demo
 ```
 
-### 2. This will create a complete project structure for us. One of the principal features that we can notice when we satrt a new project in Angular, is that `everything` uses decorators.
+### 2. This will create a complete project structure for us. 
 
 ```typescript app.component.ts
 import { Component } from '@angular/core';
@@ -32,10 +32,69 @@ export class AppComponent {
 }
 ``` 
 
-### 3. But what really are decorators? 
+```typescript app.component.spec.ts
+import { TestBed, async } from '@angular/core/testing';
+
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  }));
+
+  it('should create the app', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  }));
+
+  it(`should have as title 'app works!'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('app works!');
+  }));
+
+  it('should render title in a h1 tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+  }));
+});
+
+```
+
+* We notice that every file has the `ts` extension, inside the `src/app` folder. Not the related ones with the app styling, that ones still using the `.css` extension.
+* This is not something that should surprise us, because the Angular team develop Angular using TypeScript. 
+* This really cool because the source types that we are using from Angular, are really develop from the team, non third parties.
+* The `app.component.ts` and `app.module.ts` use `class`, at this point there is not to much difference with `ES6`.
+* The `app.componen.spec.ts`, looks really close to nay ES6 file.
+
+```typescript main.ts
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+* This file, bootstrap our app using the main module, in this case `AppModule`.
+* Another interesting file it's `test.ts`, this file basically prepare the test environment and make possible that all tests get discover, and executed.
+
+
+### 3.  One of the principal features that we can notice when we start a new project in Angular, is that `everything` uses decorators. But what really are decorators? 
 
 * In its simplest form, a decorator is simply a way of wrapping one piece of code with another – literally “decorating”.
-* They are a pattern to make multiple diifferrent kingd of classes that are not related shared this common code without inherit from a common class.
+* They are a pattern to make multiple different kingd of classes that are not related shared this common code without inherit from a common class.
 * In JavaScript we can achieve this behavior by usin HOF. But we have to think about classes an properties, where apply this could be really tough.
 * In Angular the decorators serve as well for meta-data purpose, this way Angular knows how to handle our code.
 * Decorators are an experimental feature in TypeScript.
