@@ -177,6 +177,40 @@ type MyClickEventHanlder = (info : string) => void;
 const clickHandler: MyClickEventHanlder = (info) => {};
 ```
 
+One feature of typescript that will remind familiar to people that come from languages as
+C# or Java are enums. Enums allow us to define a set of named constants. Using enums in our 
+code can clarify our intentions.
+
+```typescript
+enum Force {
+  Dark,
+  Light
+}
+
+```
+
+By default are numeric values starting in `0` and incrementing by `1`, starting from left to right.
+We can use as well string values. 
+
+```diff
+enum Force {
+  Dark,
+  Light
+}
+
++const jediOrSith = (forceType: Force): void => {
++  if (forceType === Force.Dark) {
++    console.log('Sith');
++  } else if (forceType === Force.Light) {
++    console.log('Jedi');  
++  }
++};
+
++jediOrSith(Force.Dark);
++console.log(Force.Dark);
+``` 
+
+
 # About Lemoncode
 
 We are a team of long-term experienced freelance developers, established as a group in 2010.
