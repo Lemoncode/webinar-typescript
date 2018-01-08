@@ -1,5 +1,72 @@
 # 01 Advanced Typescript features
 
+## keyof
+
+Suppose we have a generic function that extract all properties of an object in a collection and we want to type it:
+
+```js
+const getPropFromCollection = (collection, prop) => {
+  return collection.map((element) => element[prop]);
+};
+```
+
+We can apply TypeScript generics to ensure first parameter:
+
+```ts
+const getPropFromCollection = <O>(collection: O[], prop) => {
+  return collection.map((element) => element[prop]);
+};
+```
+
+For `prop` we can use `keyof` operator to ensure that `prop` is a property of the passed object `O`:
+
+```ts
+const getPropFromCollection = <O>(collection: O[], prop: keyof O) => {
+  return collection.map((element) => element[prop]);
+};
+```
+
+See it in action:
+
+```ts
+interface Contributor {
+  id: number;
+  name: string;
+  numberOfContributions: number;
+  lastContributionDate: Date;
+}
+
+const contributors: Contributor[] = [
+  { id: 18, name: 'jkalfred', numberOfContributions: 48, lastContributionDate: new Date('2018-01-03 10:06:46') },
+  { id: 25, name: 'john01', numberOfContributions: 85, lastContributionDate: new Date('2018-01-08 05:11:32') },
+  { id: 46, name: 'peter89', numberOfContributions: 19, lastContributionDate: new Date('2018-01-02 04:27:24') },
+];
+
+const getPropFromCollection = <O>(collection: O[], prop: keyof O) => {
+  return collection.map((element) => element[prop]);
+};
+
+const allNames = getPropFromCollection(contributors, 'name'); // you can only pass 'id', 'name' or 'numberOfContributions' to the second parameter.
+
+const allSurnames = getPropFromCollection(contributors, 'surname'); // this throws a compile error
+```
+
+To add the typing return we can use `K extends keyof O` to create a type `K` that we can use to access the type of the used prop:
+
+```ts
+const getPropFromCollection = <O, K extends keyof O>(collection: O[], prop: K): O[K][] => {
+  return collection.map((element) => element[prop]);
+};
+```
+
+This way we can know that passing `'id'` as second argument the returned value is a `number[]`:
+
+```ts
+const allIds = getPropFromCollection(contributors, 'id'); // allIds is number[]
+const allNames = getPropFromCollection(contributors, 'name'); // allNames is string[]
+```
+
+
 ## Guard types
 
 Suppose we have a function that returns a CSS `transform` property and we need to type it:
