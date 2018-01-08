@@ -5,7 +5,7 @@
 `typeof` operator already exists in JavaScript that can be used with TypeScript as a guard type. See next example:
 
 ```ts
-function repeatChar(charCode: string | number) {
+function repeatChar(charCode: string | number): string {
     let char: string;
     if (typeof charCode === 'string') {
         char = charCode.charAt(0);
@@ -51,7 +51,7 @@ class Cat extends Animal {
 const cat = new Cat();
 const dog = new Dog();
 
-const sayHi = (animal: Animal) => {
+const sayHi = (animal: Animal): string => {
   if (animal instanceof Dog) {
     return animal.woof();
   } else if (animal instanceof Cat) {
