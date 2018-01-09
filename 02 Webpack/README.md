@@ -2,7 +2,7 @@
 
 In this sample we are going to configure all necessary stuff to work with Webpack and TypeScript.
 
-We will start from basic webpack configuration about copy an HTML template and insert all bundles using `html-webpack-plugin`.
+We will start from basic webpack configuration (_00 start point_) about copy an HTML template and insert all bundles using `html-webpack-plugin`.
 
 # Steps to build it
 
