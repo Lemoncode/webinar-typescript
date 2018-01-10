@@ -2,6 +2,8 @@
 
 Demo material for TypeScript webinar: "Es hora de TypeScript..." (spanish).
 
+Recording: [https://www.youtube.com/watch?v=9fkklSQCCck](https://www.youtube.com/watch?v=9fkklSQCCck)
+
 # About Lemoncode
 
 We are a team of long-term experienced freelance developers, established as a group in 2010.
